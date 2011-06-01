@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Controle de Alunos</h1>
+
+    {{ form.non_field_errors }}
+
+    <form action="." method="POST">
+        {% csrf_token %}
+        <h3>Informações Pessoais</h3>
+        {{ pessForm.as_p }}
+        <h3>Contato</h3>
+        {{ endForm.as_table }}
+        <!--<div class="secaoForm"><h3>Informa&ccedil;&otilde;es Pessoais</h3></div>
+        <div class="tabela">
+        	<table>
+        		<tr>
+        			<td><div class="sexo">
+        			    <INPUT TYPE=RADIO NAME="tipoPessoa" VALUE="aluno" checked>Aluno<br>
+						<INPUT TYPE=RADIO NAME="tipoPessoa" VALUE="responsavel">Responsavel
+					</td></div>
+        			<td>{{ form.responsavel.label_tag }}<br>{{ form.responsavel }}</td>
+        		</tr>
+        		<tr>
+        			<td>{{ form.nome.label_tag }}<br>{{ form.nome }}</td>
+        			<td>{{ form.sexo.label_tag }}<br>{{ form.sexo }}</td>
+        		</tr>
+        		<tr>
+        			<td>{{ form.dtNasc.label_tag }}<br>{{ form.dtNasc }}</td>
+        			<td>{{ form.matricula.label_tag }}<br>{{ form.matricula }}</td>
+        		</tr>
+        		<tr>
+        			<td>{{ form.rg.label_tag }}<br>{{ form.rg }}</td>
+        			<td>{{ form.cpf.label_tag }}<br>{{ form.cpf }}</td>
+        		</tr>
+        		<tr><td colspan=2><div class="secaoForm"><h3>Contato</h3></div></tr>
+        		<tr>
+        			<td>{{ form.tipoTelefone.label_tag }}<br>{{ form.tipoTelefone }}</td>
+        			<td>{{ form.numeroTelefone.label_tag }}<br>{{ form.numeroTelefone }}</td>
+        		</tr>
+        		<tr>
+        			<td colspan=2>{{ form.logradouro.label_tag }}<br>{{ form.logradouro }}</td>
+        		</tr>
+        		<tr>
+        			<td>{{ form.numero.label_tag }}<br>{{ form.numero }}</td>
+        			<td>{{ form.complemento.label_tag }}<br>{{ form.complemento }}</td>
+        		</tr>
+        		<tr>
+        			<td>{{ form.bairro.label_tag }}<br>{{ form.bairro }}</td>
+        			<td>{{ form.cidade.label_tag }}<br>{{ form.cidade }}</td>
+        		</tr>
+        		<tr>
+        			<td>{{ form.uf.label_tag }}<br>{{ form.uf }}</td>
+        			<td>{{ form.cep.label_tag }}<br>{{ form.cep }}</td>
+        		</tr>
+        		<tr>
+        			<td colspan=2>{{ form.email.label_tag }}<br>{{ form.email }}</td>
+        		</tr>
+        	</table>
+        	</div>
+        -->
+        <input type="submit" value="Gravar!" class="button">
+    </form>
+{% endblock content %}
